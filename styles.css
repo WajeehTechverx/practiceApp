@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.header
+{
+	height: 100hv;
+	background: 	#00FF7F;
+}
+.navbar-style
+{
+	box-shadow: 0 5px 10px #efefef;
+}
+.logo
+{
+
+	height: 48px;
+	padding: 2px 10px;
+}
+.container
+{
+	background-color: #ABEBC6;
+	width: 80%;
+	height: 80%;
+}
+#errorMessage
+{
+	color: red;
+}
+.span
+{
+	visibility: hidden;
+	color: red;
+}
+#submit
+{
+	float:right
+}
+.page-header
+{
+	background-color: #D4AC0D
+}
+.footer 
+{
+    position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #008B8B;
+	color: white;
+	text-align: center;
+}
