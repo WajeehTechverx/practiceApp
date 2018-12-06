@@ -12,6 +12,8 @@
 
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script src="jquery-3.3.1.js"></script>
 	
   </head>
 
@@ -20,16 +22,16 @@
   		<h1 align="center">Sign Up Form</h1>
 	</div>
   	<div class="container text-center">
- 	<form class="form-horizontal col-md-6" id="form" onsubmit="submitCheck(event)" >
+ 	<form class="form-horizontal col-md-6" id="form" onsubmit="" >
   		<div class="row">
   				<div class="col-md-6">
   					<label>First Name <span id="errorMessae">*</span></label>
-  					<input type="text" class="form-control" id="fNmae" placeholder="Enter First Name" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+  					<input type="text" class="form-control" id="fName" placeholder="Enter First Name"  >
   					<span id="FNSpan" class="span">Input Not Valid</span>
   				</div>
   				<div class="col-md-6">
   					<label>Last Name <span id="errorMessae">*</span></label>
-  					<input type="text" class="form-control" id="lName" placeholder="Enter Last Nmae" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"   >
+  					<input type="text" class="form-control" id="lName" placeholder="Enter Last Nmae"     >
   					<span id="LNSpan" class="span">Input Not Valid</span>
   				</div>
   		</div>
@@ -37,12 +39,12 @@
   		<div class="row">
   				<div class="col-md-6">
   					<label>Email Add <span id="errorMessae">*</span></label>
-  					<input type="Email" class="form-control" id="email" placeholder="Enter Email" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+  					<input type="Email" class="form-control" id="email" placeholder="Enter Email"  >
   					<span id="MailSpan" class="span">Input Not Valid</span>
   				</div>
   				<div class="col-md-6">
   					<label>Enter DOB <span id="errorMessae">*</span></label>
-  					<input type="Date" class="form-control" id="dob" placeholder="Enter Date Of Birth" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+  					<input type="Date" class="form-control" id="dob" placeholder="Enter Date Of Birth"  >
   					<span id="DOBSpan" class="span">Input Not Valid</span>
   				</div>
   		</div>
@@ -50,12 +52,12 @@
 	  	<div class="row">
 	  			<div class="col-md-6">
 	  				<label>Paswword <span id="errorMessae">*</span></label>
-	  				<input type="Password" class="form-control" id="password" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+	  				<input type="Password" class="form-control" id="password" placeholder="Enter Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"    >
 	  				<span id="PSpan" class="span">Input Not Valid</span>
 	  			</div>
 	  			<div class="col-md-6">
 	  				<label >Confirm PWD <span id="errorMessae">*</span></label>
-	  				<input type="Password" class="form-control" id="rPassword" placeholder="Renter password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+	  				<input type="Password" class="form-control" id="rPassword" placeholder="Renter password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"    >
 	  				<span id="RPSpan" class="span">Input Not Valid</span>
 	  			</div>
 	  	</div>
@@ -63,17 +65,17 @@
 	  	<div class="row">
 	  			<div class="col-md-4">
 	  				<label>Enter CNIC <span id="errorMessae">*</span></label>
-	  				<input size="15" type="text" class="form-control" id="cnic" placeholder="XXXXX-XXXXXXX-X" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+	  				<input size="15" type="text" class="form-control" id="cnic" placeholder="XXXXX-XXXXXXX-X"    >
 	  				<span id="CNICSpan" class="span">Input Not Valid</span>
 	  			</div>
 	  			<div class="col-md-4">
 	  				<label >Issuance <span id="errorMessae">*</span></label>
-	  				<input type="Date" class="form-control" id="issueDate" placeholder="Issuance Date" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+	  				<input type="Date" class="form-control" id="issueDate" placeholder="Issuance Date"    >
 	  				<span id="IDSpan" class="span">Input Not Valid</span>
 	  			</div>
 	  			<div class="col-md-4">
 	  				<label >Expirey <span id="errorMessae">*</span></label>
-	  				<input type="Date" class="form-control" id="expireyDate" placeholder="Expirey Date" onfocus="myFocusFunction(this)" onblur="myBlurFunction(this)"  >
+	  				<input type="Date" class="form-control" id="expireyDate" placeholder="Expirey Date"    >
 	  				<span id="EDSpan" class="span">Input Not Valid</span>
 	  			</div>
 	  	</div>
@@ -89,88 +91,118 @@
   	</div>
 </div>
 <script>
-	function validate(obj)
-	{
-		var nameREGEX = /^[a-zA-Z ]{2,15}$/;
-		var emailREGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		var passwordREGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
-		var cnicREGEX = /^[0-9]{5}-[0-9]{7}-[0-9]{1}$/;
-		switch(obj.id)
+	$("input" ).focus(function(event)
 		{
-			case "fNmae":
-				console.log(obj.id);
-				var result = (obj.value).match(nameREGEX);
-				break;
-
-			case "lName":
-				console.log(obj.id);
-				var result = (obj.value).match(nameREGEX);
-				break;
-
-
-			case "email":
-				console.log(obj.id);
-				var result = (obj.value).match(emailREGEX);
-				break;
-
-			case "password":
-				console.log(obj.id);
-				var result = (obj.value).match(passwordREGEX);
-				break;
-			
-			case "rPassword":
-				console.log(obj.id);
-				var result = (obj.value).match(passwordREGEX);
-				break;
-			case "cnic":
-				console.log(obj.id);
-				var result = (obj.value).match(cnicREGEX);
+			//alert( "Handler for .focus() called.");
+			//console.log((event.target.id),"Clicked ",(event.target.value),"Value")
+			var element = (event.target.id);
+			//console.log(element,"-->Type:",jQuery.type(element),"-->Type:",jQuery.type("fName"));
+			$("#"+element).css("background-color", "lightgray");
+		
 		}
-		console.log(result);
-		return result;
-	}
+	);
 
-	var btn = document.getElementById("submit");
-	function myFocusFunction(x)
-	{
-		x.style.background="silver";
-	}
-
-	function myBlurFunction(x)
-	{
-		x.style.background="";
-		if(!(x.value==""))
+	$("input" ).blur(function(event)
 		{
-			if (!validate(x))
+			//alert( "Handler for .focus() called.");
+			//console.log((event.target.id),"Clicked ",(event.target.value),"Value")
+			var element = (event.target.id);
+			//console.log(element,"-->Type:",jQuery.type(element),"-->Type:",jQuery.type("fName"));
+			console.log(event.target.value);
+			var nameREGEX = /^[a-zA-Z ]{2,15}$/;
+			var emailREGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,	3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			var passwordREGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+			var cnicREGEX = /^[0-9]{5}-[0-9]{7}-[0-9]{1}$/;
+			$("#"+element).css("background-color", "");
+			switch(element)
 			{
-       			//btn.disabled = true;
-       			$(x).next().css("visibility", "visible");
-   			}
-   			else
-   			{
-   				//btn.disabled = false;
-   				$(x).next().css("visibility", "hidden");
-   			}
-		}
-		else
-			$(x).next().css("visibility", "hidden");
-	}
+				case "fName":
+				case "lName":
+					if(event.target.value=="")
+						$("#"+element).next().css("visibility", "hidden");
+					else
+					if(event.target.value.match(nameREGEX))
+						$("#"+element).next().css("visibility", "hidden");
+					else
+						$("#"+element).next().css("visibility", "visible");
+					break;
 
-	function submitCheck(f)
-	{
-		f.preventDefault();
+				case "email":
+					if(event.target.value=="")
+						$("#"+element).next().css("visibility", "hidden");
+					else
+					if(event.target.value.match(emailREGEX))
+						$("#"+element).next().css("visibility", "hidden");
+					else
+						$("#"+element).next().css("visibility", "visible");
+					break;
+
+				case "password":
+				case "rPassword":
+					if(event.target.value=="")
+						$("#"+element).next().css("visibility", "hidden");
+					else
+					if(event.target.value.match(passwordREGEX))
+						$("#"+element).next().css("visibility", "hidden");
+					else
+						$("#"+element).next().css("visibility", "visible");
+					break;
+
+				case "cnic":
+					if(event.target.value=="")
+						$("#"+element).next().css("visibility", "hidden");
+					else
+					if(event.target.value.match(cnicREGEX))
+						$("#"+element).next().css("visibility", "hidden");
+					else
+						$("#"+element).next().css("visibility", "visible");
+					break;
+				// case "dob":
+				// case "expireyDate":
+				// case "issueDate":
+				// 	if(event.target.value=="")
+				// 		$("#"+element).next().css("visibility", "hidden");
+				// 	else
+				// 		$("#"+element).next().css("visibility", "visible");
+				// 	break;
+			}	
+		}
+	);
+
+	$('#form').submit(function (event) {
+		console.log("No.of elements:", document.getElementById("form").elements.length);
 		form = document.getElementById('form');
 		for( var i=0; i<form.elements.length; i++ )
 		{
-			if(form.elements[i].value=="")
+			console.log($(form.elements[i]).val())
+			if(i==3 || i==7 || i==8)
 			{
-				$(form.elements[i]).next().innerHTML='Enter this field';
-				$(form.elements[i]).next().css("visibility", "visible");
+				if($(form.elements[i]).val()=="")
+				{
+					$(form.elements[i]).next().html('Enter this field');
+					$(form.elements[i]).next().css("visibility", "visible");
+				}
+				else
+					$(form.elements[i]).next().css("visibility", "hidden");
+			}
+			else
+			{ 
+				if(form.elements[i].value=="")
+				{
+					$(form.elements[i]).next().html('Enter this field');
+					$(form.elements[i]).next().css("visibility", "visible");
+				}
+				else
+					$(form.elements[i]).next().css("visibility", "hidden");
 			}
 		}
-		//f.preventDefault();
-	}
+		event.preventDefault();
 
+    });
+//-----------------------------------------------------------------------------
+//00000000000000000000000000000000000000000000000000000000000000000000000000000
+//-----------------------------------------------------------------------------
+	
 </script>
 </body>
 <hr>
