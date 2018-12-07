@@ -2,10 +2,15 @@
 	margin: 0;
 	padding: 0;
 }
-.header
+#form1
 {
 	height: 100hv;
 	background: 	#00FF7F;
+}
+#form2
+{
+	height: 100hv;
+	background: 	#E59866;
 }
 .navbar-style
 {
@@ -19,9 +24,8 @@
 }
 .container
 {
-	background-color: #ABEBC6;
-	width: 80%;
-	height: 80%;
+	background-color: white;
+	width: 90%;
 }
 #errorMessage
 {

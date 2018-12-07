@@ -108,7 +108,6 @@
 			//console.log((event.target.id),"Clicked ",(event.target.value),"Value")
 			var element = (event.target.id);
 			//console.log(element,"-->Type:",jQuery.type(element),"-->Type:",jQuery.type("fName"));
-			console.log(event.target.value);
 			var nameREGEX = /^[a-zA-Z ]{2,15}$/;
 			var emailREGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,	3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			var passwordREGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
@@ -170,34 +169,59 @@
 	);
 
 	$('#form').submit(function (event) {
-		console.log("No.of elements:", document.getElementById("form").elements.length);
+		//console.log("No.of elements:", document.getElementById("form").elements.length);
 		form = document.getElementById('form');
-		for( var i=0; i<form.elements.length; i++ )
+		var validated = true;
+	
+		for( var i=0; i<(form.elements.length)-1; i++ )
 		{
-			console.log($(form.elements[i]).val())
+			//console.log($(form.elements[i]).val())
 			if(i==3 || i==7 || i==8)
 			{
 				if($(form.elements[i]).val()=="")
 				{
+					validated = false;
 					$(form.elements[i]).next().html('Enter this field');
 					$(form.elements[i]).next().css("visibility", "visible");
 				}
 				else
+				{
 					$(form.elements[i]).next().css("visibility", "hidden");
+					validated = true;
+				}
 			}
 			else
 			{ 
 				if(form.elements[i].value=="")
 				{
+					validated = false;
 					$(form.elements[i]).next().html('Enter this field');
 					$(form.elements[i]).next().css("visibility", "visible");
 				}
 				else
+				{
 					$(form.elements[i]).next().css("visibility", "hidden");
+					validated = true;
+				}
 			}
 		}
-		event.preventDefault();
+		//debugger;
+		if (validated == true)
+			$("#from").load("profileBuild.html");
+			//window.open("profileBuild.html");
+			//console.log("Done");
+		else
+			event.preventDefault();
 
+    });
+
+	$("input").keypress(function(e) {
+	  	key = e.which;
+	  	if((e.target.id == "fName" || e.target.id == "lName") && (key > 47 && key < 58))
+	  		return false;
+	  	else
+	  	if((e.target.id == "cnic") && !((key > 47 && key < 58) || (key == 45)))
+	  		return false;
     });
 //-----------------------------------------------------------------------------
 //00000000000000000000000000000000000000000000000000000000000000000000000000000
