@@ -1,0 +1,212 @@
+{
+  "companies": [
+    {
+      "id": "1",
+      "compnayCode": "2345",
+      "Name": "Atech",
+      "Holidays": "16-11-2018",
+      "bonus":5,
+      "SaralyCut": [
+        10,
+        5
+      ],"users": [
+        {
+          "id": "1",
+          "name": "ALen",
+          "Trackingnumber": "128345",
+          "salary": "50000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "17-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "sat",
+              "date": "16-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "tuesday",
+              "date": "19-11-2018",
+              "type": "unpaid"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Max",
+          "Trackingnumber": "328345",
+          "salary": "40000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "18-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "sat",
+              "date": "15-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "tuesday",
+              "date": "19-11-2018",
+              "type": "paid"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "morgan",
+          "Trackingnumber": "1283456",
+          "salary": "35000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "20-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "sunday",
+              "date": "19-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "tuesday",
+              "date": "13-11-2018",
+              "type": "paid"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "name": "alex",
+          "Trackingnumber": "3283456",
+          "salary": "35000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "20-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "sunday",
+              "date": "19-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "tuesday",
+              "date": "12-11-2018",
+              "type": "paid"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "compnayCode": "1234",
+      "Name": "Btech",
+      "Holidays": "20-11-2018",
+      "bonus":2,
+      "SaralyCut": [
+        11,
+        4
+      ],"users": [
+        {
+          "id": "3",
+          "name": "angelina",
+          "Trackingnumber": "328345",
+          "salary": "18000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "17-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "sat",
+              "date": "16-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "tuesday",
+              "date": "19-11-2018",
+              "type": "unpaid"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "name": "Maxy",
+          "Trackingnumber": "328345",
+          "salary": "45000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "18-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "sat",
+              "date": "15-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "tuesday",
+              "date": "19-11-2018",
+              "type": "paid"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "name": "morgan lean",
+          "Trackingnumber": "1283456",
+          "salary": "25000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "20-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "sunday",
+              "date": "19-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "tuesday",
+              "date": "13-11-2018",
+              "type": "paid"
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "name": "alexender",
+          "Trackingnumber": "3283456",
+          "salary": "35000",
+          "leaves": [
+            {
+              "day": "monday",
+              "date": "20-11-2018",
+              "type": "paid"
+            },
+            {
+              "day": "sunday",
+              "date": "19-11-2018",
+              "type": "unpaid"
+            },
+            {
+              "day": "tuesday",
+              "date": "12-11-2018",
+              "type": "paid"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
