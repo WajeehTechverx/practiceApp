@@ -2,14 +2,15 @@ require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+const mWare = require('./libs/middleware');
 const URL = process.env.DB_URL;
-//const port = 8080;
-const users = require('./routes/user');
+const verify = require('./libs/middleware');
+const authenticateRoutes = require('./routes/authenticate');
+const adminRoutes = require('./routes/admin');
+const userRoutes = require('./routes/user');
 
 const app = express();
 app.use(bodyParser.json());
-const port = process.env.USRNAME;
-console.log(port,"CJJFGJFGGFGHGFFGFJ")
 
 //app.use(bodyParser.json());
 
@@ -26,7 +27,10 @@ mongoose.connect(URL,{
 
 
 // Use Routes
-app.use('/', users);
+app.use('/admin', verify,adminRoutes);
+app.use('/users', verify,userRoutes);
+app.use('/',authenticateRoutes);
+//app.use('/',regestrationRoutes);
 
 // Server Configurations
 app.listen(process.env.PORT, function () {
